@@ -1,7 +1,7 @@
 import HelloWorld from '@/components/HelloWorld/HelloWorld'
-import GlobalStyle from '@/styles/GlobalStyle'
-import Header from '@/layouts/Header'
 import Footer from '@/layouts/Footer'
+import Header from '@/layouts/Header'
+import GlobalStyle from '@/styles/GlobalStyle'
 
 export default function App() {
   return (
