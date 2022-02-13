@@ -15,12 +15,10 @@ interface FlexWrapperProps {
   wrap?: 'nowrap' | 'wrap' | 'wrap-reverse'
 }
 
-const FlexWrapper = styled.div<FlexWrapperProps>`
+export const FlexWrapper = styled.div<FlexWrapperProps>`
   display: flex;
   flex-direction: ${props => props.flexDirection || 'row'};
   flex-wrap: ${props => props.wrap || 'nowrap'};
   align-items: ${props => props.alignItems || 'inherit'};
   justify-content: ${props => props.justifyContent || 'start'};
 `
-
-export default FlexWrapper

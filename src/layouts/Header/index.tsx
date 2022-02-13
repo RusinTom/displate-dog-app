@@ -18,12 +18,10 @@ const Title = styled.h1`
   letter-spacing: 1px;
 `
 
-const Header = ({ title }: HeaderProps) => {
+export const Header = ({ title }: HeaderProps) => {
   return (
     <MainHeader>
       <Title>{title}</Title>
     </MainHeader>
   )
 }
-
-export default Header
