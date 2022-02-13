@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 import { FlexWrapper } from '@/components/common/FlexWrapper'
-import HelloWorld from '@/components/HelloWorld/HelloWorld'
 import { Footer } from '@/layouts/Footer'
 import { Header } from '@/layouts/Header'
 import { Main } from '@/layouts/Main'
+import { FrontPage } from '@/pages/FrontPage'
 import GlobalStyle from '@/styles/GlobalStyle'
 
 const AppContainer = styled(FlexWrapper)`
@@ -18,7 +18,7 @@ export default function App() {
       <AppContainer flexDirection="column" justifyContent="space-between">
         <Header title={'Dog App'} />
         <Main>
-          <HelloWorld msg="Boilerplate" />
+          <FrontPage />
         </Main>
         <Footer msg={'© 2022 All Rights Reserved'} />
       </AppContainer>
