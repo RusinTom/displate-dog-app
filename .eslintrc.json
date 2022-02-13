@@ -44,7 +44,7 @@
   },
   "parser": "@typescript-eslint/parser", // Allows Eslint to understand TypeScript syntax.
   "parserOptions": {
-    "project": "**/tsconfig.json", // Specify where to find the root tsconfig file of your project.
+    "project": "*/tsconfig.json", // Specify where to find the root tsconfig file of your project.
     "ecmaVersion": 2021, // ECMAScript version supported in the project.
     "sourceType": "module", // set to `module` because we ue ECMAScript modules.
     "ecmaFeatures": {
