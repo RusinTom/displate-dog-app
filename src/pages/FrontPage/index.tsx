@@ -1,7 +1,12 @@
 import React from 'react'
 
-const FrontPage = () => {
-  return <div></div>
-}
+import { Container } from '@/components/common/Container'
+import { Dog } from '@/components/Dog'
 
-export default FrontPage
+export const FrontPage = () => {
+  return (
+    <Container>
+      <Dog />
+    </Container>
+  )
+}
