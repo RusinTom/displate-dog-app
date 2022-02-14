@@ -8,6 +8,8 @@ interface Colors {
   grayBg: string
   gray: string
   textLight: string
+  error: string
+  success: string
 }
 
 export const colors: Colors = {
@@ -17,5 +19,7 @@ export const colors: Colors = {
   turquoiseLight: lighten(0.2, '#117899'),
   grayBg: '#f3f3ff',
   gray: '#F5F7FB',
-  textLight: '#151920'
+  textLight: '#151920',
+  error: '#5f2120',
+  success: '#1e4620'
 }
