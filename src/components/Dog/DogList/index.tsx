@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { FlexWrapper } from '@/components/common/FlexWrapper'
 import { BreedButton } from '@/components/Dog/Buttons/BreedButton'
+import { breakpoints, maxWidth } from '@/styles/shared/breakpoints'
 import { colors } from '@/styles/shared/colors'
 
 interface DogListProps {
@@ -16,6 +17,14 @@ const Card = styled.div`
   border-radius: 4px;
   box-shadow: 0 16px 32px rgb(180 180 180 / 40%);
   background-color: ${colors.gray};
+
+  ${maxWidth(breakpoints.lg)} {
+    flex: 1 1 calc(50% - 3rem);
+  }
+
+  ${maxWidth(breakpoints.sm)} {
+    flex: 1 1 100%;
+  }
 `
 
 const DogListWrap = styled(FlexWrapper)`

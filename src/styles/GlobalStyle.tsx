@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
+import { breakpoints, maxWidth } from '@/styles/shared/breakpoints'
+
 import fonts from './shared/fonts'
 
 const GlobalStyle = createGlobalStyle`
@@ -28,6 +30,11 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 500;
     margin: 0;
     font-family: ${fonts.roboto};
+    
+    ${maxWidth(breakpoints.lg)} {
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+    }
   }
 
   h4 {

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { breakpoints, maxWidth } from '@/styles/shared/breakpoints'
 import { colors } from '@/styles/shared/colors'
 
 interface BreedButtonProps {
@@ -10,7 +11,7 @@ interface BreedButtonProps {
 const Button = styled.button`
   padding: 0.4rem 1.5rem;
   margin: 0.5rem;
-  font-size: 14px;
+  font-size: 1.4rem;
   color: white;
   background-color: ${colors.turquoise};
   border-radius: 4px;
@@ -28,6 +29,11 @@ const Button = styled.button`
   }
   &:active {
     background-color: ${colors.turquoiseDark};
+  }
+
+  ${maxWidth(breakpoints.lg)} {
+    font-size: 1.2rem;
+    padding: 0 1rem;
   }
 `
 
