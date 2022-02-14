@@ -1,15 +1,15 @@
 interface Breakpoints {
-  sm: '576'
-  md: '768'
-  lg: '992'
-  xl: '1200'
+  sm: 576
+  md: 768
+  lg: 992
+  xl: 1200
 }
 
 const breakpoints: Breakpoints = {
-  sm: '576',
-  md: '768',
-  lg: '992',
-  xl: '1200'
+  sm: 576,
+  md: 768,
+  lg: 992,
+  xl: 1200
 }
 
 const minWidth = (breakpoint: number) => {
