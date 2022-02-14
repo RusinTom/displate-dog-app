@@ -48,7 +48,7 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     font-family: ${fonts.roboto};
-    font-weight: 400;
+    font-weight: 500;
     text-decoration: none;
     display: inline-block;
     transition: all 0.2s ease-out;
