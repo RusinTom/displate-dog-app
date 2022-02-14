@@ -38,13 +38,13 @@ const RingElement = styled.div<RingElementProps>`
   border: ${props =>
     props.borderColor
       ? `${props.borderSize}px solid ${props.borderColor}`
-      : `${props.borderSize}px solid ${colors.primaryColor}`};
+      : `${props.borderSize}px solid ${colors.turquoise}`};
   border-radius: 50%;
   animation: ${animate} 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   border-color: ${props =>
     props.borderColor
       ? `${props.borderColor} transparent transparent transparent;`
-      : `${colors.primaryColor} transparent transparent transparent`};
+      : `${colors.turquoise} transparent transparent transparent`};
 `
 
 const RingElementSecond = styled(RingElement)`

@@ -9,7 +9,7 @@ interface HeaderProps {
 
 const MainHeader = styled.header`
   padding: 1.5rem;
-  background-color: ${colors.primaryColor};
+  background-color: ${colors.turquoise};
 `
 
 const Title = styled.h1`
