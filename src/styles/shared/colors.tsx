@@ -1,6 +1,6 @@
 import { darken, lighten } from 'polished'
 
-export interface Colors {
+export interface IColors {
   default: string
   turquoise: string
   turquoiseDark: string
@@ -13,7 +13,7 @@ export interface Colors {
   disabled: string
 }
 
-export const colors: Colors = {
+export const colors: IColors = {
   default: '#0B0C10',
   turquoise: '#117899',
   turquoiseDark: darken(0.1, '#117899'),

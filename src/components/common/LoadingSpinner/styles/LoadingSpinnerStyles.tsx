@@ -2,11 +2,11 @@ import styled, { keyframes } from 'styled-components'
 
 import { colors } from '@/styles/shared/colors'
 
-interface RingProps {
+interface IRingProps {
   size: number
 }
 
-interface RingElementProps {
+interface IRingElementProps {
   size: number
   borderSize: number
   borderColor?: string
@@ -21,7 +21,7 @@ const animate = keyframes`
     }
 `
 
-export const Ring = styled.div<RingProps>`
+export const Ring = styled.div<IRingProps>`
   display: inline-block;
   position: relative;
   width: ${props => props.size + 'px'};
@@ -29,7 +29,7 @@ export const Ring = styled.div<RingProps>`
   margin-left: 2rem;
 `
 
-export const RingElement = styled.div<RingElementProps>`
+export const RingElement = styled.div<IRingElementProps>`
   display: block;
   position: absolute;
   width: ${props => props.size + 'px'};

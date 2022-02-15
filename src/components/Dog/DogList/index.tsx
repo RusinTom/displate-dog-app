@@ -8,12 +8,12 @@ import {
   Title
 } from '@/components/Dog/DogList/styles/DogListStyles'
 
-interface DogListProps {
+interface IDogListProps {
   dogBreeds: Record<string, string[]>
   handleModalOpen: (breedUrl: string, title: string) => void
 }
 
-export const DogList = ({ dogBreeds, handleModalOpen }: DogListProps) => {
+export const DogList = ({ dogBreeds, handleModalOpen }: IDogListProps) => {
   return (
     <DogListWrap wrap="wrap">
       {Object.keys(dogBreeds).map(breed => (

@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 
-import { Button, ButtonProps } from '@/components/common/Button/Button'
+import { Button, IButtonProps } from '@/components/common/Button/Button'
 import {
   Body,
   Content,
@@ -11,17 +11,17 @@ import {
   Title
 } from '@/components/common/Modal/styles/ModalStyles'
 
-interface ModalProps {
+interface IModalProps {
   open: boolean
   onClose: () => void
   onSubmit: () => void
   title: string
   closeLabel: string
   submitLabel: string
-  submitProps?: ButtonProps
+  submitProps?: IButtonProps
 }
 
-export const Modal: FC<ModalProps> = ({
+export const Modal: FC<IModalProps> = ({
   open,
   onClose,
   onSubmit,

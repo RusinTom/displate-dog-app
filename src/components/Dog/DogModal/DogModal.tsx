@@ -12,14 +12,14 @@ import { IDogBreedImage } from '@/types/interfaces/IDogBreedImage'
 
 import { Image } from './Image'
 
-interface DogModalProps {
+interface IDogModalProps {
   title: string
   breedUrl: string
   isOpen: boolean
   onClose: () => void
 }
 
-const DogModal = ({ title, breedUrl, isOpen, onClose }: DogModalProps) => {
+const DogModal = ({ title, breedUrl, isOpen, onClose }: IDogModalProps) => {
   const [dogImageUrl, setDogImageUrl] = useState<string>('')
   const { isFetching, isError, data, error, refetch } = useQuery<
     AxiosResponse<IDogBreedImage>,

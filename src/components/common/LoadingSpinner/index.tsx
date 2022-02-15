@@ -8,7 +8,7 @@ import {
   RingElementThird
 } from '@/components/common/LoadingSpinner/styles/LoadingSpinnerStyles'
 
-interface LoadingSpinnerProps {
+interface ILoadingSpinnerProps {
   size: number
   borderSize: number
   borderColor?: string
@@ -18,7 +18,7 @@ export const LoadingSpinner = ({
   size,
   borderSize,
   borderColor
-}: LoadingSpinnerProps) => {
+}: ILoadingSpinnerProps) => {
   return (
     <Ring size={size}>
       <RingElement

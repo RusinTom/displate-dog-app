@@ -4,13 +4,13 @@ import { ButtonStatus, ButtonVariant } from '@/components/common/Button/Button'
 import { breakpoints, maxWidth } from '@/styles/shared/breakpoints'
 import { colors } from '@/styles/shared/colors'
 
-interface StyledButtonProps {
+interface IStyledButtonProps {
   status: ButtonStatus
   variant: ButtonVariant
   disabled: boolean
 }
 
-export const StyledButton = styled.button<StyledButtonProps>`
+export const StyledButton = styled.button<IStyledButtonProps>`
   display: flex;
   align-items: center;
   padding: 0.4rem 1.5rem;

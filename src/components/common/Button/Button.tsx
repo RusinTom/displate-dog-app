@@ -7,12 +7,12 @@ import { colors } from '@/styles/shared/colors'
 export type ButtonVariant = 'primary' | 'secondary'
 export type ButtonStatus = 'idle' | 'loading'
 
-export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
+export interface IButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   variant?: ButtonVariant
   status?: ButtonStatus
 }
 
-export const Button: FC<ButtonProps> = ({
+export const Button: FC<IButtonProps> = ({
   variant = 'primary',
   status = 'idle',
   children,

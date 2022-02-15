@@ -12,11 +12,11 @@ const FooterMessage = styled.p`
   color: white;
 `
 
-interface FooterProps {
+interface IFooterProps {
   msg: string
 }
 
-export const Footer = ({ msg }: FooterProps) => {
+export const Footer = ({ msg }: IFooterProps) => {
   return (
     <MainFooter>
       <FooterMessage>{msg}</FooterMessage>

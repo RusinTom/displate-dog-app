@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-interface FlexWrapperProps {
+interface IFlexWrapperProps {
   justifyContent?:
     | 'space-between'
     | 'space-around'
@@ -15,7 +15,7 @@ interface FlexWrapperProps {
   wrap?: 'nowrap' | 'wrap' | 'wrap-reverse'
 }
 
-export const FlexWrapper = styled.div<FlexWrapperProps>`
+export const FlexWrapper = styled.div<IFlexWrapperProps>`
   display: flex;
   flex-direction: ${props => props.flexDirection || 'row'};
   flex-wrap: ${props => props.wrap || 'nowrap'};

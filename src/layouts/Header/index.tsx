@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { colors } from '@/styles/shared/colors'
 
-interface HeaderProps {
+interface IHeaderProps {
   title: string
 }
 
@@ -18,7 +18,7 @@ const Title = styled.h1`
   letter-spacing: 1px;
 `
 
-export const Header = ({ title }: HeaderProps) => {
+export const Header = ({ title }: IHeaderProps) => {
   return (
     <MainHeader>
       <Title>{title}</Title>
