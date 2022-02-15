@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
-export const ModalWindow = styled.div`
+export const ModalWindow = styled(motion.div)`
   position: fixed;
   left: 0;
   top: 0;
@@ -13,7 +14,7 @@ export const ModalWindow = styled.div`
   overflow-y: auto;
 `
 
-export const Content = styled.div`
+export const Content = styled(motion.div)`
   width: 50rem;
   max-width: 95vw;
   border-radius: 8px;

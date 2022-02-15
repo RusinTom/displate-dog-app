@@ -46,8 +46,18 @@ export const Modal: FC<ModalProps> = ({
   if (!open) return null
 
   return ReactDOM.createPortal(
-    <ModalWindow onClick={onClose}>
-      <Content onClick={e => e.stopPropagation()}>
+    <ModalWindow
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+      onClick={onClose}
+    >
+      <Content
+        initial={{ y: -50 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.3 }}
+        onClick={e => e.stopPropagation()}
+      >
         <Header>
           <Title>{title}</Title>
         </Header>
