@@ -1,10 +1,11 @@
 import { AxiosResponse } from 'axios'
 import { AnimatePresence } from 'framer-motion'
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import { useQuery } from 'react-query'
 
 import { DogBreedsApi } from '@/api/Dogs/DogBreeds'
 import { Alert } from '@/components/common/Alert'
+import { BUTTON_STATUS_ENUM } from '@/components/common/Button/Button'
 import { FlexWrapper } from '@/components/common/FlexWrapper'
 import { LoadingSpinner } from '@/components/common/LoadingSpinner'
 import { Modal } from '@/components/common/Modal'
@@ -20,7 +21,6 @@ interface IDogModalProps {
 }
 
 const DogModal = ({ title, breedUrl, isOpen, onClose }: IDogModalProps) => {
-  const [dogImageUrl, setDogImageUrl] = useState<string>('')
   const { isFetching, isError, data, error, refetch } = useQuery<
     AxiosResponse<IDogBreedImage>,
     string
@@ -28,17 +28,12 @@ const DogModal = ({ title, breedUrl, isOpen, onClose }: IDogModalProps) => {
     enabled: false,
     refetchOnWindowFocus: false
   })
+
   const imageUrl = useMemo(() => data?.data?.message, [data])
 
   useEffect(() => {
     refetch()
   }, [breedUrl, refetch])
-
-  useEffect(() => {
-    if (imageUrl) {
-      setDogImageUrl(imageUrl)
-    }
-  }, [imageUrl])
 
   const nextImage = () => {
     return refetch()
@@ -51,7 +46,9 @@ const DogModal = ({ title, breedUrl, isOpen, onClose }: IDogModalProps) => {
       submitLabel="Next image"
       open={isOpen}
       submitProps={{
-        status: isFetching ? 'loading' : 'idle'
+        status: isFetching
+          ? BUTTON_STATUS_ENUM.loading
+          : BUTTON_STATUS_ENUM.idle
       }}
       onClose={onClose}
       onSubmit={nextImage}
@@ -64,9 +61,9 @@ const DogModal = ({ title, breedUrl, isOpen, onClose }: IDogModalProps) => {
 
       {isError && <Alert type="error">{error}</Alert>}
 
-      {data?.data?.message && (
+      {imageUrl && (
         <AnimatePresence>
-          {!isFetching && <Image key={dogImageUrl} url={dogImageUrl} />}
+          {!isFetching && <Image key={imageUrl} url={imageUrl} />}
         </AnimatePresence>
       )}
     </Modal>
