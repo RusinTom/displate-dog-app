@@ -1,7 +1,11 @@
 import React, { FC, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 
-import { Button, IButtonProps } from '@/components/common/Button/Button'
+import {
+  Button,
+  BUTTON_VARIANT_ENUM,
+  IButtonProps
+} from '@/components/common/Button/Button'
 import {
   Body,
   Content,
@@ -63,7 +67,7 @@ export const Modal: FC<IModalProps> = ({
         </Header>
         <Body>{children}</Body>
         <Footer>
-          <Button variant="secondary" onClick={onClose}>
+          <Button variant={BUTTON_VARIANT_ENUM.secondary} onClick={onClose}>
             {closeLabel}
           </Button>
           <Button onClick={onSubmit} {...submitProps}>
