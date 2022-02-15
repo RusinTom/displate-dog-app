@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-import { ButtonStatus, ButtonVariant } from '@/components/common/Button/Button'
+import {
+  BUTTON_VARIANT_ENUM,
+  ButtonStatus,
+  ButtonVariant
+} from '@/components/common/Button/Button'
 import { breakpoints, maxWidth } from '@/styles/shared/breakpoints'
 import { colors } from '@/styles/shared/colors'
 
@@ -16,11 +20,12 @@ export const StyledButton = styled.button<IStyledButtonProps>`
   padding: 0.4rem 1.5rem;
   margin: 0.5rem;
   font-size: 1.4rem;
-  color: ${props => (props.variant === 'primary' ? 'white' : colors.textLight)};
+  color: ${props =>
+    props.variant === BUTTON_VARIANT_ENUM.primary ? 'white' : colors.textLight};
   background-color: ${props =>
     props.disabled
       ? colors.disabled
-      : props.variant === 'primary'
+      : props.variant === BUTTON_VARIANT_ENUM.primary
       ? colors.turquoise
       : colors.gray};
   border-radius: 4px;
@@ -28,7 +33,7 @@ export const StyledButton = styled.button<IStyledButtonProps>`
     ${props =>
       props.disabled
         ? colors.disabled
-        : props.variant === 'primary'
+        : props.variant === BUTTON_VARIANT_ENUM.primary
         ? colors.turquoise
         : colors.gray};
   transition: all 0.2s;
@@ -38,7 +43,7 @@ export const StyledButton = styled.button<IStyledButtonProps>`
     background-color: ${props =>
       props.disabled
         ? colors.disabled
-        : props.variant === 'primary'
+        : props.variant === BUTTON_VARIANT_ENUM.primary
         ? colors.turquoiseDark
         : colors.turquoiseLight};
   }
@@ -53,7 +58,7 @@ export const StyledButton = styled.button<IStyledButtonProps>`
     background-color: ${props =>
       props.disabled
         ? colors.disabled
-        : props.variant === 'primary'
+        : props.variant === BUTTON_VARIANT_ENUM.primary
         ? colors.turquoiseDark
         : colors.gray};
   }
