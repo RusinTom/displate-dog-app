@@ -15,7 +15,7 @@ const apiClient = axios.create({
 const axiosErrorHandler = (error: AxiosError) => {
   if (error.isAxiosError) {
     if (error.response) {
-      console.error(`[API Error]: ${error.response.data}`)
+      console.error(`[API Error]: ${JSON.stringify(error.response.data)}`)
       return Promise.reject(ERROR_MESSAGES_ENUM.apiError)
     } else {
       console.error('[Network Error]: No Response Received')
