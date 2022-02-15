@@ -10,12 +10,12 @@ const createSingleBreedEndpoint = (breed: string): string => {
   return `/breed/${breed}/images/random`
 }
 
-interface DogBreedsApi {
+interface IDogBreedsApi {
   index: () => Promise<AxiosResponse<IDogBreed>>
   single: (breed: string) => Promise<AxiosResponse<IDogBreedImage>>
 }
 
-export const DogBreeds: DogBreedsApi = {
+export const DogBreedsApi: IDogBreedsApi = {
   index: () => get<IDogBreed>(DOGS_API_ENDPOINTS_ENUM.allBreeds),
   single: breed => get<IDogBreedImage>(createSingleBreedEndpoint(breed))
 }

@@ -3,7 +3,7 @@ import { AnimatePresence } from 'framer-motion'
 import React, { useEffect, useMemo, useState } from 'react'
 import { useQuery } from 'react-query'
 
-import { DogBreeds } from '@/api/Dogs/DogBreeds'
+import { DogBreedsApi } from '@/api/Dogs/DogBreeds'
 import { Alert } from '@/components/common/Alert'
 import { FlexWrapper } from '@/components/common/FlexWrapper'
 import { LoadingSpinner } from '@/components/common/LoadingSpinner'
@@ -24,7 +24,7 @@ const DogModal = ({ title, breedUrl, isOpen, onClose }: DogModalProps) => {
   const { isFetching, isError, data, error, refetch } = useQuery<
     AxiosResponse<IDogBreedImage>,
     string
-  >('dogImage', () => DogBreeds.single(breedUrl), {
+  >('dogImage', () => DogBreedsApi.single(breedUrl), {
     enabled: false,
     refetchOnWindowFocus: false
   })

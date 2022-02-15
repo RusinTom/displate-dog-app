@@ -3,7 +3,7 @@ import React, { useMemo, useState } from 'react'
 import { useQuery } from 'react-query'
 import styled from 'styled-components'
 
-import { DogBreeds } from '@/api/Dogs/DogBreeds'
+import { DogBreedsApi } from '@/api/Dogs/DogBreeds'
 import { Alert } from '@/components/common/Alert'
 import { LoadingSpinner } from '@/components/common/LoadingSpinner'
 import { DogList } from '@/components/Dog/DogList'
@@ -22,7 +22,7 @@ export const Dog = () => {
   const { isLoading, isError, data, error } = useQuery<
     AxiosResponse<IDogBreed>,
     string
-  >('dogBreeds', DogBreeds.index)
+  >('dogBreeds', DogBreedsApi.index)
   const [breedUrl, setBreedUrl] = useState('')
   const [modalTitle, setModalTitle] = useState('')
 
