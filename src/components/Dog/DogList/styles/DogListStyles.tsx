@@ -25,7 +25,7 @@ export const DogListWrap = styled(FlexWrapper)`
   margin: 0 -1.5rem;
 `
 
-export const ButtonsWrap = styled.div`
+export const ButtonsWrap = styled(FlexWrapper)`
   margin: 0 -0.5rem;
 `
 
