@@ -1,7 +1,6 @@
 import legacy from '@vitejs/plugin-legacy'
-import reactRefresh from '@vitejs/plugin-react-refresh'
 import react from '@vitejs/plugin-react'
-
+import reactRefresh from '@vitejs/plugin-react-refresh'
 import { fileURLToPath } from 'url'
 import { defineConfig } from 'vite'
 
