@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from 'react'
 import styled from 'styled-components'
 
-import { Alert } from '@/components/common/Alert'
-import { LoadingSpinner } from '@/components/common/LoadingSpinner'
-import { DogList } from '@/components/Dog/DogList'
+import { Alert } from '@/components/common/Alert/Alert'
+import { LoadingSpinner } from '@/components/common/LoadingSpinner/LoadingSpinner'
+import { DogList } from '@/components/Dog/DogList/DogList'
 import DogModal from '@/components/Dog/DogModal/DogModal'
 import { useDogBreeds } from '@/hooks/useDogBreeds'
 import { useModal } from '@/hooks/useModal'

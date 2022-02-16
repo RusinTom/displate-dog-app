@@ -1,11 +1,11 @@
 import { AnimatePresence } from 'framer-motion'
 import React, { useEffect, useMemo } from 'react'
 
-import { Alert } from '@/components/common/Alert'
+import { Alert } from '@/components/common/Alert/Alert'
 import { BUTTON_STATUS_ENUM } from '@/components/common/Button/Button'
-import { FlexWrapper } from '@/components/common/FlexWrapper'
-import { LoadingSpinner } from '@/components/common/LoadingSpinner'
-import { Modal } from '@/components/common/Modal'
+import { FlexWrapper } from '@/components/common/FlexWrapper/FlexWrapper'
+import { LoadingSpinner } from '@/components/common/LoadingSpinner/LoadingSpinner'
+import { Modal } from '@/components/common/Modal/Modal'
 import { useDogImage } from '@/hooks/useDogImage'
 
 import { Image } from './Image'
