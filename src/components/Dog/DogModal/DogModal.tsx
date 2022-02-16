@@ -63,7 +63,7 @@ const DogModal = ({ title, breedUrl, isOpen, onClose }: IDogModalProps) => {
 
       {imageUrl && (
         <AnimatePresence>
-          {!isFetching && <Image key={imageUrl} url={imageUrl} />}
+          {!isFetching && <Image key={imageUrl} url={imageUrl} alt={title} />}
         </AnimatePresence>
       )}
     </Modal>

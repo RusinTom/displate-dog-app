@@ -20,7 +20,7 @@ export const LoadingSpinner = ({
   borderColor
 }: ILoadingSpinnerProps) => {
   return (
-    <Ring size={size}>
+    <Ring size={size} role="progressbar">
       <RingElement
         size={size}
         borderSize={borderSize}
