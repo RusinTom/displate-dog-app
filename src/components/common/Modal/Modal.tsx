@@ -2,7 +2,6 @@ import React, { FC, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 
 import {
-  Button,
   BUTTON_VARIANT_ENUM,
   IButtonProps
 } from '@/components/common/Button/Button'
@@ -11,6 +10,7 @@ import {
   Content,
   Footer,
   Header,
+  ModalButton,
   ModalWindow,
   Title
 } from '@/components/common/Modal/styles/ModalStyles'
@@ -68,12 +68,15 @@ export const Modal: FC<IModalProps> = ({
         </Header>
         <Body>{children}</Body>
         <Footer>
-          <Button variant={BUTTON_VARIANT_ENUM.secondary} onClick={onClose}>
+          <ModalButton
+            variant={BUTTON_VARIANT_ENUM.secondary}
+            onClick={onClose}
+          >
             {closeLabel}
-          </Button>
-          <Button onClick={onSubmit} {...submitProps}>
+          </ModalButton>
+          <ModalButton onClick={onSubmit} {...submitProps}>
             {submitLabel}
-          </Button>
+          </ModalButton>
         </Footer>
       </Content>
     </ModalWindow>,
