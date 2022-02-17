@@ -1,15 +1,12 @@
-import { AxiosResponse } from 'axios'
 import React, { useMemo, useState } from 'react'
-import { useQuery } from 'react-query'
 import styled from 'styled-components'
 
-import { DogBreedsApi } from '@/api/Dogs/DogBreeds'
-import { Alert } from '@/components/common/Alert'
-import { LoadingSpinner } from '@/components/common/LoadingSpinner'
-import { DogList } from '@/components/Dog/DogList'
+import { Alert } from '@/components/common/Alert/Alert'
+import { LoadingSpinner } from '@/components/common/LoadingSpinner/LoadingSpinner'
+import { DogList } from '@/components/Dog/DogList/DogList'
 import DogModal from '@/components/Dog/DogModal/DogModal'
+import { useDogBreeds } from '@/hooks/useDogBreeds'
 import { useModal } from '@/hooks/useModal'
-import { IDogBreed } from '@/types/interfaces/IDogBreed'
 
 const DogWrap = styled.div`
   margin: 3rem 0;
@@ -19,10 +16,7 @@ const DogWrap = styled.div`
 
 export const Dog = () => {
   const { isModalOpen, openModal, closeModal } = useModal()
-  const { isLoading, isError, data, error } = useQuery<
-    AxiosResponse<IDogBreed>,
-    string
-  >('dogBreeds', DogBreedsApi.index)
+  const { isLoading, isError, data, error } = useDogBreeds()
   const [breedUrl, setBreedUrl] = useState('')
   const [modalTitle, setModalTitle] = useState('')
 

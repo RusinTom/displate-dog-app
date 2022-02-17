@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 
 import { StyledButton } from '@/components/common/Button/styles/ButtonStyles'
-import { LoadingSpinner } from '@/components/common/LoadingSpinner'
+import { LoadingSpinner } from '@/components/common/LoadingSpinner/LoadingSpinner'
 import { colors } from '@/styles/shared/colors'
 
 export enum BUTTON_STATUS_ENUM {

@@ -1,15 +1,12 @@
-import { AxiosResponse } from 'axios'
 import { AnimatePresence } from 'framer-motion'
 import React, { useEffect, useMemo } from 'react'
-import { useQuery } from 'react-query'
 
-import { DogBreedsApi } from '@/api/Dogs/DogBreeds'
-import { Alert } from '@/components/common/Alert'
+import { Alert } from '@/components/common/Alert/Alert'
 import { BUTTON_STATUS_ENUM } from '@/components/common/Button/Button'
-import { FlexWrapper } from '@/components/common/FlexWrapper'
-import { LoadingSpinner } from '@/components/common/LoadingSpinner'
-import { Modal } from '@/components/common/Modal'
-import { IDogBreedImage } from '@/types/interfaces/IDogBreedImage'
+import { FlexWrapper } from '@/components/common/FlexWrapper/FlexWrapper'
+import { LoadingSpinner } from '@/components/common/LoadingSpinner/LoadingSpinner'
+import { Modal } from '@/components/common/Modal/Modal'
+import { useDogImage } from '@/hooks/useDogImage'
 
 import { Image } from './Image'
 
@@ -21,14 +18,7 @@ interface IDogModalProps {
 }
 
 const DogModal = ({ title, breedUrl, isOpen, onClose }: IDogModalProps) => {
-  const { isFetching, isError, data, error, refetch } = useQuery<
-    AxiosResponse<IDogBreedImage>,
-    string
-  >('dogImage', () => DogBreedsApi.single(breedUrl), {
-    enabled: false,
-    refetchOnWindowFocus: false
-  })
-
+  const { isFetching, isError, data, error, refetch } = useDogImage(breedUrl)
   const imageUrl = useMemo(() => data?.data?.message, [data])
 
   useEffect(() => {

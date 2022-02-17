@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { FlexWrapper } from '@/components/common/FlexWrapper'
+import { FlexWrapper } from '@/components/common/FlexWrapper/FlexWrapper'
 import { breakpoints, maxWidth } from '@/styles/shared/breakpoints'
 import { colors } from '@/styles/shared/colors'
 
