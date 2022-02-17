@@ -11,11 +11,11 @@
 
 ### Installation
 
-Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services.\_
+Below you will find instructions on how to start the application locally.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/RusinTom/displate-dog-app.git
+    git clone https://github.com/RusinTom/displate-dog-app.git
    ```
 2. Install packages
 
@@ -29,13 +29,28 @@ Below is an example of how you can instruct your audience on installing and sett
    yarn install
    ```
 
+   If port 3000 is not busy, the application should be able to be opened under the address http://localhost:3000/
+
 3. Run app
+
+   ```sh
+   npm run dev
+   ```
+
+   or
 
    ```sh
    yarn dev
    ```
 
 4. Run tests
+
+   ```sh
+   npm run test:unit
+   ```
+
+   or
+
    ```sh
    yarn test:unit
    ```
