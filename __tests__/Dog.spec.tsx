@@ -13,8 +13,8 @@ import { Dog } from '../src/components/Dog/Dog'
 import { DogList } from '../src/components/Dog/DogList/DogList'
 import { renderWithClient } from './__utils__'
 
-jest.mock('../src/components/Dog/DogList', () => ({
-  ...jest.requireActual('../src/components/Dog/DogList'),
+jest.mock('../src/components/Dog/DogList/DogList.tsx', () => ({
+  ...jest.requireActual('../src/components/Dog/DogList/DogList.tsx'),
   DogList: jest.fn(() => <div>DogList</div>)
 }))
 
@@ -34,7 +34,7 @@ describe('Dog', () => {
 
   it('renders error if fetch failed', async () => {
     server.use(
-      rest.get<DefaultRequestBody, any>(
+      rest.get<DefaultRequestBody>(
         `${baseURL}${DOGS_API_ENDPOINTS_ENUM.allBreeds}`,
         (req, res, ctx) => {
           return res(ctx.delay(100), ctx.status(500))
