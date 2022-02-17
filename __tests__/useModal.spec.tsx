@@ -1,5 +1,4 @@
 import { act, renderHook } from '@testing-library/react-hooks'
-import React from 'react'
 
 import { useModal } from '../src/hooks/useModal'
 

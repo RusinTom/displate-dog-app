@@ -1,6 +1,6 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react'
 import { DefaultRequestBody, rest } from 'msw'
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 import { server } from '../jest.setup'
 import { baseURL } from '../src/api/axios'
@@ -14,7 +14,7 @@ beforeAll(() => {
 jest.mock('react-dom', () => {
   return {
     ...jest.requireActual('react-dom'),
-    createPortal: (element: any, target: any) => {
+    createPortal: (element: ReactNode, target: HTMLElement) => {
       return element
     }
   }
@@ -36,7 +36,7 @@ describe('DogModal', () => {
 
   it('render modal with error message if fetch failed', async () => {
     server.use(
-      rest.get<DefaultRequestBody, any>(
+      rest.get<DefaultRequestBody>(
         `${baseURL}/breed/beagle/images/random`,
         (req, res, ctx) => {
           return res(ctx.delay(100), ctx.status(500))
@@ -53,7 +53,8 @@ describe('DogModal', () => {
       />
     )
 
-    await screen.findByText(/Technical problems have occurred/i)
+    const error = await screen.findByText(/Technical problems have occurred/i)
+    expect(error).toBeInTheDocument()
   })
 
   it('render modal with image', async () => {
@@ -73,7 +74,7 @@ describe('DogModal', () => {
 
   it('render modal with next image', async () => {
     server.use(
-      rest.get<DefaultRequestBody, any>(
+      rest.get<DefaultRequestBody>(
         `${baseURL}/breed/beagle/images/random`,
         (req, res, ctx) => {
           return res(

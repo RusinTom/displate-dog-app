@@ -7,7 +7,7 @@ import { baseURL } from '../../src/api/axios'
 import { DOGS_API_ENDPOINTS_ENUM } from '../../src/api/Dogs'
 
 export const handlers = [
-  rest.get<DefaultRequestBody, any>(
+  rest.get<DefaultRequestBody>(
     `${baseURL}${DOGS_API_ENDPOINTS_ENUM.allBreeds}`,
     (req, res, ctx) => {
       return res(
@@ -19,7 +19,7 @@ export const handlers = [
       )
     }
   ),
-  rest.get<DefaultRequestBody, any>(
+  rest.get<DefaultRequestBody>(
     `${baseURL}/breed/beagle/images/random`,
     (req, res, ctx) => {
       return res(
