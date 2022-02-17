@@ -14,7 +14,7 @@ jest.mock('react-dom', () => {
 })
 
 describe('Modal', () => {
-  it('render modal', () => {
+  it('render', () => {
     renderWithClient(
       <Modal
         title={'Modal test'}
@@ -30,7 +30,7 @@ describe('Modal', () => {
     expect(screen.getByRole('dialog')).toBeInTheDocument()
   })
 
-  it('render modal with proper title', () => {
+  it('render with proper title', () => {
     renderWithClient(
       <Modal
         title={'Modal test'}
@@ -46,7 +46,7 @@ describe('Modal', () => {
     expect(screen.getByRole('dialog')).toBeInTheDocument()
   })
 
-  it('render modal with proper submit button text', () => {
+  it('render with proper submit button text', () => {
     renderWithClient(
       <Modal
         title={'Modal test'}
@@ -62,7 +62,7 @@ describe('Modal', () => {
     expect(screen.getByText('Ok')).toBeInTheDocument()
   })
 
-  it('render modal with proper close button text', () => {
+  it('render with proper close button text', () => {
     renderWithClient(
       <Modal
         title={'Modal test'}
@@ -78,7 +78,7 @@ describe('Modal', () => {
     expect(screen.getByText('Close')).toBeInTheDocument()
   })
 
-  it('render modal with proper body', () => {
+  it('render with proper body', () => {
     renderWithClient(
       <Modal
         title={'Modal test'}

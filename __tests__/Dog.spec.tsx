@@ -27,12 +27,12 @@ beforeAll(() => {
 describe('Dog', () => {
   const loadingSpinner = () => screen.queryByRole('progressbar')
 
-  it('renders loading spinner', () => {
+  it('render loading spinner', () => {
     renderWithClient(<Dog />)
     expect(loadingSpinner()).toBeInTheDocument()
   })
 
-  it('renders error if fetch failed', async () => {
+  it('render error if fetch failed', async () => {
     server.use(
       rest.get<DefaultRequestBody>(
         `${baseURL}${DOGS_API_ENDPOINTS_ENUM.allBreeds}`,
@@ -48,7 +48,7 @@ describe('Dog', () => {
     ).toBeInTheDocument()
   })
 
-  it('renders DogList', async () => {
+  it('render DogList', async () => {
     renderWithClient(<Dog />)
 
     await waitForElementToBeRemoved(() => loadingSpinner())
