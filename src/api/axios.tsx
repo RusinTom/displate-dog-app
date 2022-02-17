@@ -6,7 +6,7 @@ enum ERROR_MESSAGES_ENUM {
   syntaxError = 'Sorry, the download failed. We will try to fix the technical problems as soon as possible.'
 }
 
-const baseURL = 'https://dog.ceo/api'
+export const baseURL = 'https://dog.ceo/api'
 
 const apiClient = axios.create({
   baseURL // <- Could be ENV variable
