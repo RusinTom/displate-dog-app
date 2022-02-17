@@ -1,7 +1,8 @@
-import React, { FC, useEffect } from 'react'
+import React, { FC, useEffect, useRef } from 'react'
 import ReactDOM from 'react-dom'
 
 import {
+  BUTTON_STATUS_ENUM,
   BUTTON_VARIANT_ENUM,
   IButtonProps
 } from '@/components/common/Button/Button'
@@ -35,6 +36,14 @@ export const Modal: FC<IModalProps> = ({
   submitProps,
   children
 }) => {
+  const ref = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    if (ref.current && submitProps?.status !== BUTTON_STATUS_ENUM.loading) {
+      ref.current.focus()
+    }
+  }, [ref, submitProps?.status])
+
   useEffect(() => {
     const closeOnEscapeKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -74,7 +83,7 @@ export const Modal: FC<IModalProps> = ({
           >
             {closeLabel}
           </ModalButton>
-          <ModalButton onClick={onSubmit} {...submitProps}>
+          <ModalButton ref={ref} onClick={onSubmit} {...submitProps}>
             {submitLabel}
           </ModalButton>
         </Footer>

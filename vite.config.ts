@@ -23,9 +23,9 @@ export default defineConfig({
     legacy(),
     reactRefresh()
   ],
-  esbuild: {
-    jsxInject: `import React from 'react'` // automatically import React in jsx files
-  },
+  // esbuild: {
+  //   jsxInject: `import React from 'react'` // automatically import React in jsx files
+  // },
   resolve: {
     alias: {
       // for TypeScript path alias import like : @/x/y/z
