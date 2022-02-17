@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
+import { Button } from '@/components/common/Button/Button'
+
 export const ModalWindow = styled(motion.div)`
   position: fixed;
   left: 0;
@@ -52,4 +54,9 @@ export const Footer = styled.div`
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
+`
+
+export const ModalButton = styled(Button)`
+  width: 140px;
+  justify-content: center;
 `
