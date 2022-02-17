@@ -40,6 +40,7 @@ export const StyledButton = styled.button<IStyledButtonProps>`
   cursor: pointer;
   font-weight: 500;
   &:hover {
+    color: white;
     background-color: ${props =>
       props.disabled
         ? colors.disabled
@@ -48,19 +49,25 @@ export const StyledButton = styled.button<IStyledButtonProps>`
         : colors.turquoiseLight};
   }
   &:focus {
+    color: white;
     outline: none;
-    background-color: ${props =>
-      props.disabled ? colors.disabled : colors.turquoiseDark};
-    border: 1px solid
-      ${props => (props.disabled ? colors.disabled : colors.turquoiseLight)};
-  }
-  &:active {
     background-color: ${props =>
       props.disabled
         ? colors.disabled
         : props.variant === BUTTON_VARIANT_ENUM.primary
         ? colors.turquoiseDark
-        : colors.gray};
+        : colors.turquoiseLight};
+    border: 1px solid
+      ${props => (props.disabled ? colors.disabled : colors.turquoiseLight)};
+  }
+  &:active {
+    color: white;
+    background-color: ${props =>
+      props.disabled
+        ? colors.disabled
+        : props.variant === BUTTON_VARIANT_ENUM.primary
+        ? colors.turquoiseDark
+        : colors.turquoiseLight};
   }
 
   ${maxWidth(breakpoints.lg)} {
