@@ -19,7 +19,7 @@ const DogImage = styled(motion.div)`
   }
 `
 
-export const Image = ({ url }: { url: string }) => {
+export const Image = ({ url, alt }: { url: string; alt: string }) => {
   const [imageLoading, setImageLoading] = useState(true)
 
   const imageLoaded = () => {
@@ -32,7 +32,7 @@ export const Image = ({ url }: { url: string }) => {
       animate={{ opacity: imageLoading ? 0 : 1 }}
       transition={{ duration: 0.5 }}
     >
-      <img key={url} alt="" src={url} onLoad={imageLoaded} />
+      <img key={url} alt={alt} src={url} onLoad={imageLoaded} />
     </DogImage>
   )
 }
