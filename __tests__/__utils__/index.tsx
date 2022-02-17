@@ -3,8 +3,8 @@ import { DefaultRequestBody, rest } from 'msw'
 import * as React from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
-import { baseURL } from '../../src/api/axios'
-import { DOGS_API_ENDPOINTS_ENUM } from '../../src/api/Dogs'
+import { baseURL } from '@/api/axios'
+import { DOGS_API_ENDPOINTS_ENUM } from '@/api/Dogs'
 
 export const handlers = [
   rest.get<DefaultRequestBody>(
