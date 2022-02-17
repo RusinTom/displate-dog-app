@@ -1,71 +1,14 @@
-import {
-  act,
-  fireEvent,
-  render as rtlRender,
-  RenderOptions,
-  screen,
-  waitFor,
-  waitForElementToBeRemoved,
-  within
-} from '@testing-library/react'
+import { fireEvent, screen, waitFor } from '@testing-library/react'
 import { DefaultRequestBody, rest } from 'msw'
-import { setupServer } from 'msw/node'
-import React, { ReactNode } from 'react'
-import { QueryClient, QueryClientProvider, setLogger } from 'react-query'
+import React from 'react'
 
+import { server } from '../jest.setup'
 import { baseURL } from '../src/api/axios'
-import { DOGS_API_ENDPOINTS_ENUM } from '../src/api/Dogs'
-import { Dog } from '../src/components/Dog'
-import { DogList } from '../src/components/Dog/DogList'
 import DogModal from '../src/components/Dog/DogModal/DogModal'
-
-const server = setupServer(
-  rest.get<DefaultRequestBody, any>(
-    `${baseURL}/breed/beagle/images/random`,
-    (req, res, ctx) => {
-      return res(
-        ctx.delay(200),
-        ctx.json({
-          message:
-            'https://images.dog.ceo/breeds/affenpinscher/n02110627_13654.jpg',
-          status: 'success'
-        })
-      )
-    }
-  )
-)
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: { retry: false, enabled: false }
-  }
-})
-
-setLogger({
-  log: console.log,
-  warn: console.warn,
-  error: () => ({})
-})
-
-const render = (ui: ReactNode, { ...rtlOptions }: RenderOptions = {}) => {
-  return rtlRender(
-    <QueryClientProvider client={queryClient}>{ui}</QueryClientProvider>,
-    {
-      ...rtlOptions
-    }
-  )
-}
+import { renderWithClient } from './__utils__'
 
 beforeAll(() => {
   jest.spyOn(console, 'error').mockImplementation(jest.fn())
-  server.listen()
-})
-afterAll(() => {
-  server.close()
-})
-afterEach(() => {
-  server.resetHandlers()
-  queryClient.clear()
 })
 
 jest.mock('react-dom', () => {
@@ -79,7 +22,7 @@ jest.mock('react-dom', () => {
 
 describe('DogModal', () => {
   it('render modal', () => {
-    render(
+    renderWithClient(
       <DogModal
         title="beagle"
         breedUrl="beagle"
@@ -101,7 +44,7 @@ describe('DogModal', () => {
       )
     )
 
-    render(
+    renderWithClient(
       <DogModal
         title="beagle"
         breedUrl="beagle"
@@ -114,7 +57,7 @@ describe('DogModal', () => {
   })
 
   it('render modal with image', async () => {
-    render(
+    renderWithClient(
       <DogModal
         title="beagle"
         breedUrl="beagle"
@@ -144,7 +87,7 @@ describe('DogModal', () => {
         }
       )
     )
-    render(
+    renderWithClient(
       <DogModal
         title="bulldog"
         breedUrl="beagle"

@@ -1,7 +1,8 @@
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import React, { ReactNode } from 'react'
 
 import { Modal } from '../src/components/common/Modal'
+import { renderWithClient } from './__utils__'
 
 jest.mock('react-dom', () => {
   return {
@@ -14,7 +15,7 @@ jest.mock('react-dom', () => {
 
 describe('Modal', () => {
   it('render modal', () => {
-    render(
+    renderWithClient(
       <Modal
         title={'Modal test'}
         closeLabel="Close"
@@ -30,7 +31,7 @@ describe('Modal', () => {
   })
 
   it('render modal with proper title', () => {
-    render(
+    renderWithClient(
       <Modal
         title={'Modal test'}
         closeLabel="Close"
@@ -46,7 +47,7 @@ describe('Modal', () => {
   })
 
   it('render modal with proper submit button text', () => {
-    render(
+    renderWithClient(
       <Modal
         title={'Modal test'}
         closeLabel="Close"
@@ -62,7 +63,7 @@ describe('Modal', () => {
   })
 
   it('render modal with proper close button text', () => {
-    render(
+    renderWithClient(
       <Modal
         title={'Modal test'}
         closeLabel="Close"
@@ -78,7 +79,7 @@ describe('Modal', () => {
   })
 
   it('render modal with proper body', () => {
-    render(
+    renderWithClient(
       <Modal
         title={'Modal test'}
         closeLabel="Close"

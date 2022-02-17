@@ -27,6 +27,8 @@ module.exports = {
     '!**/*.d.ts'
   ],
 
+  testPathIgnorePatterns: ['/__utils__/'],
+
   // Important: order matters, specific rules should be defined first
   // https://jestjs.io/fr/docs/configuration#modulenamemapper-objectstring-string--arraystring
   moduleNameMapper: {
