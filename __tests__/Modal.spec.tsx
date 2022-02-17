@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react'
 import React, { ReactNode } from 'react'
 
-import { Modal } from '../src/components/common/Modal'
+import { Modal } from '../src/components/common/Modal/Modal'
 import { renderWithClient } from './__utils__'
 
 jest.mock('react-dom', () => {

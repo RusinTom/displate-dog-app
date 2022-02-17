@@ -9,8 +9,8 @@ import React from 'react'
 import { server } from '../jest.setup'
 import { baseURL } from '../src/api/axios'
 import { DOGS_API_ENDPOINTS_ENUM } from '../src/api/Dogs'
-import { Dog } from '../src/components/Dog'
-import { DogList } from '../src/components/Dog/DogList'
+import { Dog } from '../src/components/Dog/Dog'
+import { DogList } from '../src/components/Dog/DogList/DogList'
 import { renderWithClient } from './__utils__'
 
 jest.mock('../src/components/Dog/DogList', () => ({

@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react'
 import React from 'react'
 
-import { DogList } from '../src/components/Dog/DogList'
+import { DogList } from '../src/components/Dog/DogList/DogList'
 import { renderWithClient } from './__utils__'
 
 describe('DogList', () => {
