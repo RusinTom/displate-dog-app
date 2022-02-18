@@ -5,8 +5,9 @@ import { DogList } from '../src/components/Dog/DogList/DogList'
 import { renderWithClient } from './__utils__'
 
 describe('DogList', () => {
+  const dogBreeds = { beagle: [], bulldog: ['boston', 'english', 'french'] }
+
   it('render the appropriate number of buttons', () => {
-    const dogBreeds = { beagle: [], bulldog: ['boston', 'english', 'french'] }
     renderWithClient(
       <DogList dogBreeds={dogBreeds} handleModalOpen={jest.fn()} />
     )
@@ -15,7 +16,6 @@ describe('DogList', () => {
   })
 
   it('render breed titles', () => {
-    const dogBreeds = { beagle: [], bulldog: ['boston', 'english', 'french'] }
     renderWithClient(
       <DogList dogBreeds={dogBreeds} handleModalOpen={jest.fn()} />
     )
@@ -27,7 +27,6 @@ describe('DogList', () => {
   })
 
   it('render breed buttons with the appropriate text', () => {
-    const dogBreeds = { beagle: [], bulldog: ['boston', 'english', 'french'] }
     renderWithClient(
       <DogList dogBreeds={dogBreeds} handleModalOpen={jest.fn()} />
     )
